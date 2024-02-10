@@ -1,0 +1,1646 @@
+{
+	"info": {
+		"_postman_id": "936f622a-08b4-4b5b-8d63-d2a7507c23ac",
+		"name": "Geek Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17015064"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"token\", jsonData.token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "GB202210a9f7213",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "f97a3f94a1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/login",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user with valid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika31q",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+79993332244",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login less than 3 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "kq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222222",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "First name less than 3 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Ni",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika33sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222222",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Last name less than 3 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sh",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika34sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222223",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login more than 20 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "niкаaaaaaaaaaaaaaaaaassq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222222",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "First name more than 20 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Ninininininininininin",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika34dq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222222",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Last name more than 20 characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheeeeeeeeeeeeeeeeeik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika35sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12222222223",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login is empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678945",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "First name is empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika36sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678945",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Last name is empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika37sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678945",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Date field format",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika38sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12377788855",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "20-01-2000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Age less than 7 years",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika39sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678945",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "06-10-2016\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Age more than 100 years",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika40sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678945",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "1921-10-06",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone number 10 digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika41sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567896",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone number 12 digits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika42sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123123123123",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "The phone number starts +",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika43sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+79054128963",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone number letters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika44sg",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "asdfghjklmn",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login fields are unique",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika34d",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "14523698745",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone fields are unique",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+						},
+						{
+							"key": "firstName",
+							"value": "Nika",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Sheik",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "nika46sq",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "14523698745",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "femille",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "14-01-1982",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/dummies",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"dummies"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
