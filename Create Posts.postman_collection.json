@@ -1,0 +1,1620 @@
+{
+	"info": {
+		"_postman_id": "75945758-8cf7-4be0-ba15-5a01bfbee798",
+		"name": "Create Posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17015064"
+	},
+	"item": [
+		{
+			"name": "Positive checks",
+			"item": [
+				{
+					"name": "Creating a post valid data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with a reliable automatic is named",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, several crossovers, because this box was put on a number of successful cars of its era.",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a post with a file only",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a post only with Title",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "A crossover with a reliable automatic is named",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isDraft",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a post only with Discription",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "More precisely, several crossovers, because this box was put on a number of successful cars of its era.",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isDraft",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a post only with a Content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delayed publication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with a reliable automatic is named",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, several crossovers, because this box was put on a number of successful cars of its era.",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "2022-10-13",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative checks",
+			"item": [
+				{
+					"name": "Empty request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "The title is more than 40",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an unrealistically reliable automatic is named",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, several crossovers, because this box was put on a number of successful cars of its era.",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "The discription is more than 100",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put on a number of successful cars of its era. If you're looking for a used SUV, it's worth looking at them.\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "The content is more than 1000",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. Just about such machines, Sergey Zinoviev, an expert at the Wheel, tells in his big review. If you choose an \"automatic\" crossover on the secondary, its material will serve you well. To make it clear, one of the examples given in the article is Jatco JF613E, aka Nissan's RE6F01A, aka Mitsubishi's F6AJA and Renault's AJO. With this box, which has an incredible margin of safety \"on the hardware\", many of you are probably familiar with. Until 2013, it was put on many crossovers: Murano, second-generation diesel X-Trail, Renault Koleos, three-liter Outlanders... And on the Lancer it was used at all until 2017.And it is still better to change the oil at the traditional 80-100 thousand km, since dirt disables the bushings and rings. However, it is not uncommon for cases when up to 180-200 thousand people walk quietly without replacing the JF613E oil. Needless to say, one of the best boxes of its time.",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Date format",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "10-10-2022",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Date format DD.MM.YYYY",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "10.10.2022",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Setting the date later than the current moment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "2021-09-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Setting the date earlier than the current moment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Тестировщик/sert_charles.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "2022-12-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Other file format",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/Жужа.gif"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "The file size is more than 2 Mb",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/201406011711P0ER52.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request without token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/201406011711P0ER52.jpg"
+								},
+								{
+									"key": "title",
+									"value": "A crossover with an ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "More precisely, even a few crossovers, because this box was put\n",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Classical automata still benefit from reliability — with gentle operating conditions and timely maintenance — from robots and variators. However, there are also automatic transmissions that, even among similar ones to this day, stand out for reliability, can serve faithfully for decades, be successfully and inexpensively repaired and serviced, despite the victory of the \"plastic world\" of disposable items. J",
+									"type": "text"
+								},
+								{
+									"key": "isDraft",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "delayPublishTo",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/posts",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create user",
+			"item": [
+				{
+					"name": "Auth user01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token_user01\", jsonData.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Allsar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "ef7a4773e2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/login",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"i=\"s\"\r",
+									"pm.collectionVariables.set(\"user_name\", pm.collectionVariables.get(\"user_name\")+i+1);\r",
+									"console.log();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+								},
+								{
+									"key": "firstName",
+									"value": "Alla",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Sarina",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{user_name}}",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "79994443322",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "female",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "12-05-2000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/dummies",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"dummies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with valid data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"i=\"s\"\r",
+									"pm.collectionVariables.set(\"user_name\", pm.collectionVariables.get(\"user_name\")+i+1);\r",
+									"console.log();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/Жужа.png"
+								},
+								{
+									"key": "firstName",
+									"value": "Alla",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Sarina",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{user_name}}",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+79994443322",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "female",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "12-05-2000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/dummies",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"dummies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "token_user01",
+			"value": ""
+		},
+		{
+			"key": "user_name",
+			"value": ""
+		}
+	]
+}
