@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "58a0a509-ea5c-4679-a3b1-cbdeb26a237a",
+		"name": "Profile page",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17015064"
+	},
+	"item": [
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "User Profile Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://test-stand.gb.ru/api/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User request with someone else's token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://test-stand.gb.ru/api/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Error Message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Вы запрашиваете чужого пользователя\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://test-stand.gb.ru/api/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating user information",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image\"",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/1603178392_lohan.jpg"
+								},
+								{
+									"key": "firstName",
+									"value": "Alina",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Dubrovina",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "alalalalal",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "79994443321",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": " female",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "2000-05-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a user with an empty username field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image\"",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/1603178392_lohan.jpg"
+								},
+								{
+									"key": "firstName",
+									"value": "Alina",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Dubrovina",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "79994443321",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": " female",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "2000-05-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a user with a non-unique username field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image\"",
+									"type": "file",
+									"src": "/C:/Users/Ирина/Desktop/личное/1603178392_lohan.jpg"
+								},
+								{
+									"key": "firstName",
+									"value": "Alina",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Dubrovina",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "nika46sq",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "79994443321",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": " female",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "2000-05-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a user with empty fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image\"",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://test-stand.gb.ru/gateway/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"gateway",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Information of the edited user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://test-stand.gb.ru/api/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checking the types of the returned response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(jsonData.id).to.be.a(\"number\");\r",
+									"  pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.phone).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.status).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.sex).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.birthDate).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token_user01}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://test-stand.gb.ru/api/users/profile/347",
+							"protocol": "https",
+							"host": [
+								"test-stand",
+								"gb",
+								"ru"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"347"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "token_user01",
+			"value": ""
+		},
+		{
+			"key": "user_name",
+			"value": ""
+		}
+	]
+}
